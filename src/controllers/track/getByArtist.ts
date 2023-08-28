@@ -16,7 +16,7 @@ export const getByArtist =async (req: Request, res: Response, next: NextFunction
     try {
         const { artist } = req.params
         const data = await queryArtist(artist)
-        res.status(200).send(data)
+        res.status(200).send({message: 'SUCCESS', data})
     } catch (err) {
         console.error("Unable to procees", err)
     }
